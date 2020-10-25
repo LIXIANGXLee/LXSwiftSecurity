@@ -31,7 +31,8 @@ extension LXSwiftSecurity {
     
     ///生成RSA密钥对，公钥和私钥，支持的SIZE有
     /// sizes for RSA keys are: 512, 768, 1024, 2048.
-    public static func generateRSAKeyPair(_ keySize: Int,callBack: (SecKey?,SecKey?) -> ()) {
+    @discardableResult
+    public static func generateRSAKeyPair(_ keySize: Int,callBack: ((SecKey?,SecKey?) -> ())?) -> (SecKey?,SecKey?) {
         
         var publicKeyRef: SecKey?
         var privateKeyRef: SecKey?
@@ -39,20 +40,20 @@ extension LXSwiftSecurity {
         let parameters = [kSecAttrKeyType: kSecAttrKeyTypeRSA, kSecAttrKeySizeInBits: keySize] as [CFString : Any]
         let ret = SecKeyGeneratePair(parameters as CFDictionary, &publicKeyRef, &privateKeyRef)
         if ret == errSecSuccess {
-            callBack(publicKeyRef,privateKeyRef)
+            callBack?(publicKeyRef,privateKeyRef)
+            return (publicKeyRef,privateKeyRef)
         }else{
-            callBack(nil,nil)
+            callBack?(nil,nil)
+            return (nil,nil)
         }
     }
-    
-    
-    
+        
     /// 加载公钥
     ///
     /// - Parameter filePath: 从x509 cer证书中读取公钥
     public static func publicKey(from cerFile: String) -> SecKey? {
+       
         guard let certData =  NSData(contentsOfFile: cerFile) else { return nil }
-        
         /// 用一个.der格式证书创建一个证书对象
         let cert = SecCertificateCreateWithData(kCFAllocatorDefault, certData)
         
@@ -83,6 +84,7 @@ extension LXSwiftSecurity {
     ///
     /// - Parameter p12File: 从 p12 文件中读取私钥，一般p12都有密码
     public static func privateKey(from p12File: String, psw: String) -> SecKey? {
+      
         guard let p12Data =  NSData(contentsOfFile: p12File) else { return nil }
         
         let options = [kSecImportExportPassphrase as String: psw]
