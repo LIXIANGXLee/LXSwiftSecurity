@@ -12,7 +12,7 @@ import CommonCrypto
 public struct LXSwiftHASH {
     
     ///填充方式 
-   public enum CCDIGESTType {
+    public enum CCDIGESTType {
         case MD5
         case SHA1
         case SHA224
@@ -27,10 +27,14 @@ public struct LXSwiftHASH {
     /// - data: 要加密的数据
     /// - paddingType:  填充模式
     /// - callBack:  签名的返回结果
-    public static func hash(with data: NSData, paddingType: LXSwiftHASH.CCDIGESTType, callBack: LXSwiftSecurity.CallBack<String>) {
+    @discardableResult
+    public static func hash(with data: NSData, paddingType: LXSwiftHASH.CCDIGESTType, callBack: LXSwiftSecurity.CallBack<NSData>? = nil) -> NSData?{
         
         /// 如果没有数据 则不要往下处理 直接返回即可
-        if data.count == 0 { return }
+        if data.count == 0 {
+            callBack?(nil)
+            return nil
+        }
         
         /// 创建指针
         var bufferBytes: UnsafeMutablePointer<UInt8>
@@ -76,6 +80,7 @@ public struct LXSwiftHASH {
         }
         
         let resultData = NSData(bytes: bufferBytes, length: bufferLength)
-        callBack(LXSwiftSecurity.stringFromResult(resultData))
+        callBack?(resultData)
+        return resultData
     }
 }

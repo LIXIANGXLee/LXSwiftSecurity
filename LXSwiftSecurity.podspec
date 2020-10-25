@@ -16,12 +16,12 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "LXSwiftSecurity"
-  spec.version      = "1.0.0"
-  spec.summary      = "swift加密方式"
+  spec.version      = "2.0.0"
+  spec.summary      = "swift加密方式md5/SHA1/SHA224/SHA256/SHA384/SHA512/AES/RSA/签名/验证签名"
 
   
   spec.description  = <<-DESC
-      swift加密方式md5/SHA1/SHA224/SHA256/SHA384/SHA512/AES/RSA/签名/验证签名
+      LXSwiftSecurity is manager swift加密方式md5/SHA1/SHA224/SHA256/SHA384/SHA512/AES/RSA/签名/验证签名
   DESC
 
   

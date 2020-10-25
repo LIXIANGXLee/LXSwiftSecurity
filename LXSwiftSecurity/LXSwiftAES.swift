@@ -22,8 +22,9 @@ public struct LXSwiftAES {
     /// - key: 长度16字节，24字节，32字节 密钥
     /// - iv:  16字节
     /// - callBack:  数据加密后的返回结果
-    public static func AES_CBC_Encrypt(with data: NSData, key: NSData, iv: NSData, callBack: LXSwiftSecurity.CallBack<NSData>) {
-        AES_Encrypt_Decrypt(isEncrypt: true, data: data, key: key, iv: iv, callBack: callBack)
+    @discardableResult
+    public static func AES_CBC_Encrypt(with data: NSData, key: NSData, iv: NSData, callBack: LXSwiftSecurity.CallBack<NSData>? = nil) -> NSData? {
+        return AES_Encrypt_Decrypt(isEncrypt: true, data: data, key: key, iv: iv, callBack: callBack)
     }
     
     ///AES 解密 CBC模式加密
@@ -33,8 +34,9 @@ public struct LXSwiftAES {
     /// - key: 长度16字节，24字节，32字节 密钥
     /// - iv:  16字节
     /// - callBack:  数据解密后的返回结果
-    public static func AES_CBC_Decrypt(with data: NSData, key: NSData, iv: NSData, callBack: LXSwiftSecurity.CallBack<NSData>) {
-        AES_Encrypt_Decrypt(isEncrypt: false, data: data, key: key, iv: iv, callBack: callBack)
+    @discardableResult
+    public static func AES_CBC_Decrypt(with data: NSData, key: NSData, iv: NSData, callBack: LXSwiftSecurity.CallBack<NSData>? = nil) -> NSData? {
+        return AES_Encrypt_Decrypt(isEncrypt: false, data: data, key: key, iv: iv, callBack: callBack)
     }
     
     ///AES 加密 ECB模式加密
@@ -43,10 +45,10 @@ public struct LXSwiftAES {
     /// - data: 要加密的数据
     /// - key: 长度16字节，24字节，32字节 密钥
     /// - callBack:  数据加密后的返回结果
-    public static func AES_ECB_Encrypt(with data: NSData, key: NSData, callBack: LXSwiftSecurity.CallBack<NSData>) {
+    @discardableResult
+    public static func AES_ECB_Encrypt(with data: NSData, key: NSData, callBack: LXSwiftSecurity.CallBack<NSData>? = nil) -> NSData? {
         AES_Encrypt_Decrypt(isEncrypt: true, data: data, key: key, iv: nil, callBack: callBack)
     }
-    
     
     ///AES 解密 ECB模式加密
     ///
@@ -54,10 +56,10 @@ public struct LXSwiftAES {
     /// - data: 要解密的数据
     /// - key: 长度16字节，24字节，32字节 密钥
     /// - callBack:  数据解密后的返回结果
-    public static func AES_ECB_Decrypt(with data: NSData, key: NSData, callBack: LXSwiftSecurity.CallBack<NSData>) {
+    @discardableResult
+    public static func AES_ECB_Decrypt(with data: NSData, key: NSData, callBack: LXSwiftSecurity.CallBack<NSData>? = nil) -> NSData? {
         AES_Encrypt_Decrypt(isEncrypt: false, data: data, key: key, iv: nil, callBack: callBack)
     }
-    
     
     ///AES 加密或者解密 CBC或者CBC模式加密和解密
     ///
@@ -67,10 +69,14 @@ public struct LXSwiftAES {
     /// - key: 长度16字节，24字节，32字节 密钥
     /// - iv:  16字节。如果是ECB模式 则传nil即可
     /// - callBack:  数据解密后的返回结果
-    private static func AES_Encrypt_Decrypt(isEncrypt: Bool , data: NSData, key: NSData, iv: NSData?, callBack: LXSwiftSecurity.CallBack<NSData>) {
+    @discardableResult
+    private static func AES_Encrypt_Decrypt(isEncrypt: Bool , data: NSData, key: NSData, iv: NSData?, callBack: LXSwiftSecurity.CallBack<NSData>? = nil) -> NSData?  {
         
         /// 如果没有数据 或者没有密钥 则不要往下处理 直接返回即可
-        if data.count == 0 || key.count == 0 { return }
+        if data.count == 0 || key.count == 0 {
+            callBack?(nil)
+            return nil
+        }
         
         /// 加密或者解密
         let kCCType = isEncrypt ? CCOperation(kCCEncrypt) : CCOperation(kCCDecrypt)
@@ -108,9 +114,12 @@ public struct LXSwiftAES {
         
         /// 加密成功或者解密成功
         if cryptStatus == kCCSuccess {
-            callBack(NSData(bytes: buffer, length: numBytesEncrypt.pointee))
+            let d = NSData(bytes: buffer, length: numBytesEncrypt.pointee)
+            callBack?(d)
+            return d
         }else{///加密或者解密失败
-            callBack(nil)
+            callBack?(nil)
+            return nil
         }
     }
 }
