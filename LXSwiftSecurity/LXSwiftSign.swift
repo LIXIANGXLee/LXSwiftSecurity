@@ -78,6 +78,7 @@ public struct LXSwiftSign {
     ///
     /// - Parameters:
     /// - data: 要验证签名的数据
+    /// - signData 已签名的数据
     /// - publicKey: 验证签名的公钥
     /// - paddingType:  填充模式
     /// - callBack:  验证签名的返回结果
