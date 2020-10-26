@@ -16,7 +16,7 @@
 #### 使用说明
  **下载后压缩包 解压   请先 pod install  在运行项目** 
   
-
+**支持多种函数调用方式、灵活调用、灵活使用 完美**
 ```
 
 LXSwiftSecurity.generateRSAKeyPair(1024) { (pubKey, priKey) in
@@ -28,6 +28,10 @@ print("======\(isVersign!)")
 }
 }
 }
+
+let  (pubKey, priKey) =  LXSwiftSecurity.generateRSAKeyPair(1024)
+let d = LXSwiftRSA.RSA_Encrypt(with: srcData, publicKey: pubKey, paddingType: .PKCS1)
+let d1 = LXSwiftRSA.RSA_Decrypt(with: d!, privateKey: priKey, paddingType: .PKCS1)
 
 guard let srcData = "我是一名iOS开发工程师，解决加密问题".data(using: .utf8) as NSData? else { return }
 guard let key16 = "0123456789123456".data(using: .utf8) as NSData? else { return  }

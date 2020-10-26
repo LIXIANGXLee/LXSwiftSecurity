@@ -74,7 +74,7 @@ public struct LXSwiftSign {
         }
     }
     
-    /// 签名
+    /// 验证签名
     ///
     /// - Parameters:
     /// - data: 要验证签名的数据

@@ -32,7 +32,7 @@ extension LXSwiftSecurity {
     ///生成RSA密钥对，公钥和私钥，支持的SIZE有
     /// sizes for RSA keys are: 512, 768, 1024, 2048.
     @discardableResult
-    public static func generateRSAKeyPair(_ keySize: Int,callBack: ((SecKey?,SecKey?) -> ())?) -> (SecKey?,SecKey?) {
+    public static func generateRSAKeyPair(_ keySize: Int,callBack: ((SecKey?,SecKey?) -> ())? = nil) -> (SecKey?,SecKey?) {
         
         var publicKeyRef: SecKey?
         var privateKeyRef: SecKey?
