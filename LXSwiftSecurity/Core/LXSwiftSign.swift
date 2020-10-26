@@ -18,8 +18,19 @@ public struct LXSwiftSign {
         case SHA256
         case SHA384
         case SHA512
+        
+        /// 填充方式转换
+        var secPadd: SecPadding {
+            switch (self) {
+            case .SHA1:   return SecPadding.PKCS1SHA1
+            case .SHA224: return SecPadding.PKCS1SHA224
+            case .SHA256: return SecPadding.PKCS1SHA256
+            case .SHA384: return SecPadding.PKCS1SHA384
+            case .SHA512: return SecPadding.PKCS1SHA512
+            }
+        }
     }
-    
+        
     /// 签名
     ///
     /// - Parameters:
@@ -45,20 +56,8 @@ public struct LXSwiftSign {
         let bufferBytes = bufferPointer.assumingMemoryBound(to: UInt8.self)
         
         /// 填充模式
-        var secPadd: SecPadding
-        switch (paddingType) {
-        case .SHA1:
-            secPadd = SecPadding.PKCS1SHA1
-        case .SHA224:
-            secPadd = SecPadding.PKCS1SHA224
-        case .SHA256:
-            secPadd = SecPadding.PKCS1SHA256
-        case .SHA384:
-            secPadd = SecPadding.PKCS1SHA384
-        case .SHA512:
-            secPadd = SecPadding.PKCS1SHA512
-        }
-        
+        let secPadd = paddingType.secPadd
+       
         let cryptStatus = SecKeyRawSign(key, secPadd, dataBytes, data.length, bufferBytes, &bufferLength)
         
         defer { bufferBytes.deallocate() }
@@ -95,19 +94,7 @@ public struct LXSwiftSign {
         let signDataBytes = signData.bytes.assumingMemoryBound(to: UInt8.self)
         
         /// 填充模式
-        var secPadd: SecPadding
-        switch (paddingType) {
-        case .SHA1:
-            secPadd = SecPadding.PKCS1SHA1
-        case .SHA224:
-            secPadd = SecPadding.PKCS1SHA224
-        case .SHA256:
-            secPadd = SecPadding.PKCS1SHA256
-        case .SHA384:
-            secPadd = SecPadding.PKCS1SHA384
-        case .SHA512:
-            secPadd = SecPadding.PKCS1SHA512
-        }
+        let secPadd = paddingType.secPadd
         
         /// 开始验证签名
         let  cryptStatus = SecKeyRawVerify(key, secPadd, dataBytes, data.count, signDataBytes, signData.count)

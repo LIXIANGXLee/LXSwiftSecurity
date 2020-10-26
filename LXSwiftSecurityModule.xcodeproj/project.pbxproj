@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		764027692546A95C007513B6 /* LXSwift+Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764027682546A95C007513B6 /* LXSwift+Encode.swift */; };
 		7656FFC725447D7200FE25D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7656FFC625447D7200FE25D5 /* AppDelegate.swift */; };
 		7656FFC925447D7200FE25D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7656FFC825447D7200FE25D5 /* SceneDelegate.swift */; };
 		7656FFCB25447D7200FE25D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7656FFCA25447D7200FE25D5 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		49DA8DE3F03B698ACC082C32 /* Pods-LXSwiftSecurityModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXSwiftSecurityModule.debug.xcconfig"; path = "Target Support Files/Pods-LXSwiftSecurityModule/Pods-LXSwiftSecurityModule.debug.xcconfig"; sourceTree = "<group>"; };
+		764027682546A95C007513B6 /* LXSwift+Encode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LXSwift+Encode.swift"; sourceTree = "<group>"; };
 		7656FFC325447D7200FE25D5 /* LXSwiftSecurityModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LXSwiftSecurityModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7656FFC625447D7200FE25D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7656FFC825447D7200FE25D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				76602DF725466F5700633047 /* LXSwift+Encryption.swift */,
+				764027682546A95C007513B6 /* LXSwift+Encode.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				76602E0625466FD500633047 /* LXSwiftRSA.swift in Sources */,
 				76602DFD25466F5700633047 /* LXSwift+Encryption.swift in Sources */,
 				76602E0825466FD500633047 /* LXSwiftSign.swift in Sources */,
+				764027692546A95C007513B6 /* LXSwift+Encode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

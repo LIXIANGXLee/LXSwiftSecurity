@@ -17,6 +17,13 @@ public struct LXSwiftRSA {
         //填充方式OAEP, 最大数据块为 blockSize -42
         case OAEP
         
+        /// 填充方式转换
+        var secPadd: SecPadding {
+            switch (self) {
+            case .PKCS1: return SecPadding.PKCS1
+            case .OAEP:  return SecPadding.OAEP
+            }
+        }
     }
     
     ///RSA 加密
@@ -69,14 +76,8 @@ public struct LXSwiftRSA {
         let bufferBytes = bufferPointer.assumingMemoryBound(to: UInt8.self)
         
         /// 填充模式
-        var rsaPadd: SecPadding
-        switch (paddingType) {
-        case .PKCS1:
-            rsaPadd = SecPadding.PKCS1
-        case .OAEP:
-            rsaPadd = SecPadding.OAEP
-        }
-        
+        let rsaPadd: SecPadding = paddingType.secPadd
+       
         /// 销毁自己创建的内存
         defer { bufferBytes.deallocate() }
         

@@ -1,9 +1,9 @@
 PODS:
-  - LXSwiftSecurity (2.2.0):
-    - LXSwiftSecurity/Core (= 2.2.0)
-    - LXSwiftSecurity/Extension (= 2.2.0)
-  - LXSwiftSecurity/Core (2.2.0)
-  - LXSwiftSecurity/Extension (2.2.0):
+  - LXSwiftSecurity (3.0.0):
+    - LXSwiftSecurity/Core (= 3.0.0)
+    - LXSwiftSecurity/Extension (= 3.0.0)
+  - LXSwiftSecurity/Core (3.0.0)
+  - LXSwiftSecurity/Extension (3.0.0):
     - LXSwiftSecurity/Core
 
 DEPENDENCIES:
@@ -14,7 +14,7 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  LXSwiftSecurity: a3ddea6e0a15d4e03bb4ed192bfa6e7ee10b2404
+  LXSwiftSecurity: 41f8c43de455e38094da8273025232f5be69e579
 
 PODFILE CHECKSUM: cc5aaa3edb3b1f7dd873fca85d52ff95ec087f53
 

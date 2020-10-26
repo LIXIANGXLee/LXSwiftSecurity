@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		104D58E36C57999C4E15C27F76B87E9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		00E104D90574D399AD74B7F666619C7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		172C35E79082AB7EF9196146F75764A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		4B0BCFF61F164E0F697C2220E6E77C1C /* LXSwiftSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F855B232C404E812820A49852A7BDD01 /* LXSwiftSecurity.swift */; };
-		8D43FDD805AD1A304873622104390B1E /* LXSwiftSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD65112B10F0C009718A194FD7D09B /* LXSwiftSign.swift */; };
+		3F1B4DC275AC9EC6428584A8CFDCEE1C /* LXSwift+Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409FC4C91E12050ED7E754AB16F547FC /* LXSwift+Encode.swift */; };
+		4E3AA9D2D5B46DC5F5A3D097CF3EDE3D /* LXSwiftRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A7AECBD2E8A67F70EF8FE33CE79931 /* LXSwiftRSA.swift */; };
+		77F4BB4395644C8D343544BF97FC8EC8 /* LXSwiftAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA50D9EEAF56E3E93048396DC75BA1 /* LXSwiftAES.swift */; };
+		85E62FBBA7BE8C1A4BC16BEAE2E85816 /* LXSwiftHASH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F4E10FF9B7BAC2B30B4E50FA050B4A /* LXSwiftHASH.swift */; };
+		86A33CF28C1773D49FAE762C5FBD3B6B /* LXSwiftSecurity-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A67F299780AD9D27DC1D3F7DA5B16E2 /* LXSwiftSecurity-dummy.m */; };
 		99298CFE32BCAF41DDEEF7788A4D4581 /* Pods-LXSwiftSecurityModule-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 42363E99386BCC5ED90AFBED58FCAFE6 /* Pods-LXSwiftSecurityModule-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A0EC66617D2C2528096B772B6D18CF89 /* LXSwiftSecurity-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A473AD96A85997C9862F1C8216C1A4D /* LXSwiftSecurity-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AAC586B9BD0C780E3548218B9EB6117B /* LXSwiftSecurity-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2D53CB743A0488A73E7DD2330905C9 /* LXSwiftSecurity-dummy.m */; };
-		B4AF908697BC4D5F3EA34643FC8FDA40 /* LXSwiftAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A579350FA0232FBB88CEFB3896E28 /* LXSwiftAES.swift */; };
-		CAEC76266DD8EEFE55EDC5C6106C8438 /* LXSwift+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464DE561659547FF36E68485A125BEF8 /* LXSwift+Encryption.swift */; };
-		DF20D01101D5374B09EB511486C23A45 /* LXSwiftHASH.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DCFDD0BD773D6AB7FF66891755E028 /* LXSwiftHASH.swift */; };
+		9F6C82D7B857899C9C99C1C240C40498 /* LXSwiftSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54C861E6A5BD66DE9A8BC4A7782EAC /* LXSwiftSign.swift */; };
+		DFA45D0498A0EA83CA7CE783D9376F81 /* LXSwift+Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB959841B23E2CADEBD934E0FD343999 /* LXSwift+Encryption.swift */; };
+		E22354341B93B7F856BC2BBC1BCF993C /* LXSwiftSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2010A86B833CD5F032E57828174B14 /* LXSwiftSecurity.swift */; };
 		E2FF22EAB3EFAAE6DB3B1F9E22E7E51A /* Pods-LXSwiftSecurityModule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCECA239D32727CD399BAFDA55EE229 /* Pods-LXSwiftSecurityModule-dummy.m */; };
-		FC04130DD2F90B6293CD5C31B12D767E /* LXSwiftRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2390720A7752B620379FE02D67FE7 /* LXSwiftRSA.swift */; };
+		F2D8C5A3587A72BA33ABC124337BCFEF /* LXSwiftSecurity-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5F1162C232DC3F9B0C0C2EA0D957D12 /* LXSwiftSecurity-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,34 +33,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0AABA45EFE70E3C6782A468EAF503DB9 /* LXSwiftSecurity.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LXSwiftSecurity.modulemap; sourceTree = "<group>"; };
-		0ED0F8947FF9F694CC0957F31A49E5B5 /* LXSwiftSecurity.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LXSwiftSecurity.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		02F2851C97200176F4FA842A3F6F6582 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		05AA1B6968B59E7D16895125993EEB63 /* LXSwiftSecurity.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LXSwiftSecurity.modulemap; sourceTree = "<group>"; };
 		11AF0C89BE8B238AA85C7C58EA64F4D9 /* Pods-LXSwiftSecurityModule.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LXSwiftSecurityModule.modulemap"; sourceTree = "<group>"; };
-		14639BB9C49F756B213AC0C95C26D225 /* LXSwiftSecurity-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LXSwiftSecurity-Info.plist"; sourceTree = "<group>"; };
-		1C2D53CB743A0488A73E7DD2330905C9 /* LXSwiftSecurity-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LXSwiftSecurity-dummy.m"; sourceTree = "<group>"; };
 		2BB0F2BC2CCE582C5044F316E7C2A97E /* Pods-LXSwiftSecurityModule-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXSwiftSecurityModule-Info.plist"; sourceTree = "<group>"; };
-		30717F457B81A76D16D793A9B6B88A95 /* LXSwiftSecurity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXSwiftSecurity.release.xcconfig; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3EC2390720A7752B620379FE02D67FE7 /* LXSwiftRSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LXSwiftRSA.swift; path = LXSwiftSecurity/Core/LXSwiftRSA.swift; sourceTree = "<group>"; };
+		409FC4C91E12050ED7E754AB16F547FC /* LXSwift+Encode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LXSwift+Encode.swift"; path = "LXSwiftSecurity/Extension/LXSwift+Encode.swift"; sourceTree = "<group>"; };
 		42363E99386BCC5ED90AFBED58FCAFE6 /* Pods-LXSwiftSecurityModule-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LXSwiftSecurityModule-umbrella.h"; sourceTree = "<group>"; };
-		464DE561659547FF36E68485A125BEF8 /* LXSwift+Encryption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LXSwift+Encryption.swift"; path = "LXSwiftSecurity/Extension/LXSwift+Encryption.swift"; sourceTree = "<group>"; };
 		5137A8DC2FAACF4C4290FCFD981C0EFD /* Pods-LXSwiftSecurityModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXSwiftSecurityModule.debug.xcconfig"; sourceTree = "<group>"; };
+		57F4E10FF9B7BAC2B30B4E50FA050B4A /* LXSwiftHASH.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LXSwiftHASH.swift; path = LXSwiftSecurity/Core/LXSwiftHASH.swift; sourceTree = "<group>"; };
+		5A67F299780AD9D27DC1D3F7DA5B16E2 /* LXSwiftSecurity-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LXSwiftSecurity-dummy.m"; sourceTree = "<group>"; };
 		5BA05954482CF81410DAC2A819A6E5DF /* Pods-LXSwiftSecurityModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXSwiftSecurityModule.release.xcconfig"; sourceTree = "<group>"; };
-		5CBAA9309E6F9DF842028792CBA88741 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		5C2010A86B833CD5F032E57828174B14 /* LXSwiftSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LXSwiftSecurity.swift; path = LXSwiftSecurity/Core/LXSwiftSecurity.swift; sourceTree = "<group>"; };
+		626B4C034C6846B525788379DA90579F /* LXSwiftSecurity.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LXSwiftSecurity.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7971585E5AA9EDBBBDEE13F9DB13A913 /* Pods_LXSwiftSecurityModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LXSwiftSecurityModule.framework; path = "Pods-LXSwiftSecurityModule.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A7A579350FA0232FBB88CEFB3896E28 /* LXSwiftAES.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LXSwiftAES.swift; path = LXSwiftSecurity/Core/LXSwiftAES.swift; sourceTree = "<group>"; };
-		8A473AD96A85997C9862F1C8216C1A4D /* LXSwiftSecurity-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXSwiftSecurity-umbrella.h"; sourceTree = "<group>"; };
+		845D6F625FAA7A9211A188DB0B419ACF /* LXSwiftSecurity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXSwiftSecurity.release.xcconfig; sourceTree = "<group>"; };
+		8905FB75FB771BFA461DF2209EBA715E /* LXSwiftSecurity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXSwiftSecurity.debug.xcconfig; sourceTree = "<group>"; };
+		8B54C861E6A5BD66DE9A8BC4A7782EAC /* LXSwiftSign.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LXSwiftSign.swift; path = LXSwiftSecurity/Core/LXSwiftSign.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FB6BBC0E69A48A66744EDDCDA6CC2B2 /* Pods-LXSwiftSecurityModule-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXSwiftSecurityModule-acknowledgements.plist"; sourceTree = "<group>"; };
-		A3DCFDD0BD773D6AB7FF66891755E028 /* LXSwiftHASH.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LXSwiftHASH.swift; path = LXSwiftSecurity/Core/LXSwiftHASH.swift; sourceTree = "<group>"; };
-		ACBD65112B10F0C009718A194FD7D09B /* LXSwiftSign.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LXSwiftSign.swift; path = LXSwiftSecurity/Core/LXSwiftSign.swift; sourceTree = "<group>"; };
+		A5F1162C232DC3F9B0C0C2EA0D957D12 /* LXSwiftSecurity-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXSwiftSecurity-umbrella.h"; sourceTree = "<group>"; };
+		BB959841B23E2CADEBD934E0FD343999 /* LXSwift+Encryption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LXSwift+Encryption.swift"; path = "LXSwiftSecurity/Extension/LXSwift+Encryption.swift"; sourceTree = "<group>"; };
 		BCCECA239D32727CD399BAFDA55EE229 /* Pods-LXSwiftSecurityModule-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LXSwiftSecurityModule-dummy.m"; sourceTree = "<group>"; };
 		BD8F46F6CE47742915C342586767BDE1 /* LXSwiftSecurity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LXSwiftSecurity.framework; path = LXSwiftSecurity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C334BA73AE153B6499020819E07295FF /* LXSwiftSecurity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXSwiftSecurity.debug.xcconfig; sourceTree = "<group>"; };
+		CD45FBAA374B1D9C80485172869F4A90 /* LXSwiftSecurity-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LXSwiftSecurity-Info.plist"; sourceTree = "<group>"; };
+		CFC8D88273E1DE2E98BEEDDCA7CC367C /* LXSwiftSecurity-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXSwiftSecurity-prefix.pch"; sourceTree = "<group>"; };
+		D7CA50D9EEAF56E3E93048396DC75BA1 /* LXSwiftAES.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LXSwiftAES.swift; path = LXSwiftSecurity/Core/LXSwiftAES.swift; sourceTree = "<group>"; };
 		D89F3E82A8DAF0DB8318FBDB95F203D9 /* Pods-LXSwiftSecurityModule-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LXSwiftSecurityModule-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E75DB94FEF9EDB255FE6DA2945C52260 /* Pods-LXSwiftSecurityModule-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LXSwiftSecurityModule-frameworks.sh"; sourceTree = "<group>"; };
-		F69373BDDF1E7CF12AF1ADD627D1DE39 /* LXSwiftSecurity-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXSwiftSecurity-prefix.pch"; sourceTree = "<group>"; };
-		F855B232C404E812820A49852A7BDD01 /* LXSwiftSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LXSwiftSecurity.swift; path = LXSwiftSecurity/Core/LXSwiftSecurity.swift; sourceTree = "<group>"; };
+		F9A7AECBD2E8A67F70EF8FE33CE79931 /* LXSwiftRSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LXSwiftRSA.swift; path = LXSwiftSecurity/Core/LXSwiftRSA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,24 +73,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F32D948A9D53B8A58B10D733D6AF39A6 /* Frameworks */ = {
+		83150A1095C75CF5199E34891062EC18 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				104D58E36C57999C4E15C27F76B87E9C /* Foundation.framework in Frameworks */,
+				00E104D90574D399AD74B7F666619C7D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B8ABCCF692EBFFB8D5FD550E4DA90C8 /* Pod */ = {
+		298DF0FF246944290A51555A5E610849 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				0ED0F8947FF9F694CC0957F31A49E5B5 /* LXSwiftSecurity.podspec */,
-				5CBAA9309E6F9DF842028792CBA88741 /* README.md */,
+				409FC4C91E12050ED7E754AB16F547FC /* LXSwift+Encode.swift */,
+				BB959841B23E2CADEBD934E0FD343999 /* LXSwift+Encryption.swift */,
 			);
-			name = Pod;
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		4182A7B26FB6F86FE82ECDD7D549985E /* Products */ = {
@@ -108,16 +110,40 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6BDBABE353D5A8B3B8EB87088A254DEE /* LXSwiftSecurity */ = {
+		6AA963935BCEE04047A29A9C9906540E /* LXSwiftSecurity */ = {
 			isa = PBXGroup;
 			children = (
-				BF85AA1C19E2BA55A5850B07AADB019D /* Core */,
-				C10A69C8EA312B2F09DB7AAC5B05FD70 /* Extension */,
-				1B8ABCCF692EBFFB8D5FD550E4DA90C8 /* Pod */,
-				DF9C4ED80527E87F41EA2806898F380F /* Support Files */,
+				D75ADE920CC1D429B03A29986C833D16 /* Core */,
+				298DF0FF246944290A51555A5E610849 /* Extension */,
+				91B2980BE0CEC5A8F8A294A5EF32CC47 /* Pod */,
+				733060E4C1F339C6B00CFBB54C233EED /* Support Files */,
 			);
 			name = LXSwiftSecurity;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		733060E4C1F339C6B00CFBB54C233EED /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				05AA1B6968B59E7D16895125993EEB63 /* LXSwiftSecurity.modulemap */,
+				5A67F299780AD9D27DC1D3F7DA5B16E2 /* LXSwiftSecurity-dummy.m */,
+				CD45FBAA374B1D9C80485172869F4A90 /* LXSwiftSecurity-Info.plist */,
+				CFC8D88273E1DE2E98BEEDDCA7CC367C /* LXSwiftSecurity-prefix.pch */,
+				A5F1162C232DC3F9B0C0C2EA0D957D12 /* LXSwiftSecurity-umbrella.h */,
+				8905FB75FB771BFA461DF2209EBA715E /* LXSwiftSecurity.debug.xcconfig */,
+				845D6F625FAA7A9211A188DB0B419ACF /* LXSwiftSecurity.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Pods/Target Support Files/LXSwiftSecurity";
+			sourceTree = "<group>";
+		};
+		91B2980BE0CEC5A8F8A294A5EF32CC47 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				626B4C034C6846B525788379DA90579F /* LXSwiftSecurity.podspec */,
+				02F2851C97200176F4FA842A3F6F6582 /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		A69BD3F093A3121FE1ADE3D0FDFD1225 /* Pods-LXSwiftSecurityModule */ = {
@@ -137,32 +163,12 @@
 			path = "Target Support Files/Pods-LXSwiftSecurityModule";
 			sourceTree = "<group>";
 		};
-		BF85AA1C19E2BA55A5850B07AADB019D /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				7A7A579350FA0232FBB88CEFB3896E28 /* LXSwiftAES.swift */,
-				A3DCFDD0BD773D6AB7FF66891755E028 /* LXSwiftHASH.swift */,
-				3EC2390720A7752B620379FE02D67FE7 /* LXSwiftRSA.swift */,
-				F855B232C404E812820A49852A7BDD01 /* LXSwiftSecurity.swift */,
-				ACBD65112B10F0C009718A194FD7D09B /* LXSwiftSign.swift */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		C10A69C8EA312B2F09DB7AAC5B05FD70 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				464DE561659547FF36E68485A125BEF8 /* LXSwift+Encryption.swift */,
-			);
-			name = Extension;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -184,25 +190,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DF9C4ED80527E87F41EA2806898F380F /* Support Files */ = {
+		D75ADE920CC1D429B03A29986C833D16 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				0AABA45EFE70E3C6782A468EAF503DB9 /* LXSwiftSecurity.modulemap */,
-				1C2D53CB743A0488A73E7DD2330905C9 /* LXSwiftSecurity-dummy.m */,
-				14639BB9C49F756B213AC0C95C26D225 /* LXSwiftSecurity-Info.plist */,
-				F69373BDDF1E7CF12AF1ADD627D1DE39 /* LXSwiftSecurity-prefix.pch */,
-				8A473AD96A85997C9862F1C8216C1A4D /* LXSwiftSecurity-umbrella.h */,
-				C334BA73AE153B6499020819E07295FF /* LXSwiftSecurity.debug.xcconfig */,
-				30717F457B81A76D16D793A9B6B88A95 /* LXSwiftSecurity.release.xcconfig */,
+				D7CA50D9EEAF56E3E93048396DC75BA1 /* LXSwiftAES.swift */,
+				57F4E10FF9B7BAC2B30B4E50FA050B4A /* LXSwiftHASH.swift */,
+				F9A7AECBD2E8A67F70EF8FE33CE79931 /* LXSwiftRSA.swift */,
+				5C2010A86B833CD5F032E57828174B14 /* LXSwiftSecurity.swift */,
+				8B54C861E6A5BD66DE9A8BC4A7782EAC /* LXSwiftSign.swift */,
 			);
-			name = "Support Files";
-			path = "Pods/Target Support Files/LXSwiftSecurity";
+			name = Core;
 			sourceTree = "<group>";
 		};
 		FA7E1321A01C4B647AC62672CF964614 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6BDBABE353D5A8B3B8EB87088A254DEE /* LXSwiftSecurity */,
+				6AA963935BCEE04047A29A9C9906540E /* LXSwiftSecurity */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -218,11 +221,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59583FFEF313CD4EBE1D56F376E414DB /* Headers */ = {
+		E453F1ACB7C9C6F0186FC805C5C1EFB3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0EC66617D2C2528096B772B6D18CF89 /* LXSwiftSecurity-umbrella.h in Headers */,
+				F2D8C5A3587A72BA33ABC124337BCFEF /* LXSwiftSecurity-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,12 +234,12 @@
 /* Begin PBXNativeTarget section */
 		563A559A8D526DA66C7576B05FB2D907 /* LXSwiftSecurity */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F6E0BA8E1A4AD9105EC7DC34E85B0E63 /* Build configuration list for PBXNativeTarget "LXSwiftSecurity" */;
+			buildConfigurationList = F56D9921F67609265389CE858DBD5CE8 /* Build configuration list for PBXNativeTarget "LXSwiftSecurity" */;
 			buildPhases = (
-				59583FFEF313CD4EBE1D56F376E414DB /* Headers */,
-				CE53839B5CF9586D166CDA60FCD3DA2C /* Sources */,
-				F32D948A9D53B8A58B10D733D6AF39A6 /* Frameworks */,
-				FCCFBCF8B476E4FA602AF0137DD3681F /* Resources */,
+				E453F1ACB7C9C6F0186FC805C5C1EFB3 /* Headers */,
+				A562B78898200519C2C7BFAA6ED5C5A1 /* Sources */,
+				83150A1095C75CF5199E34891062EC18 /* Frameworks */,
+				C15B784F4A08013A387C9AD1D9835A15 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -295,14 +298,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CB7B4B5567AA5B2B3C514AFCC15E4769 /* Resources */ = {
+		C15B784F4A08013A387C9AD1D9835A15 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FCCFBCF8B476E4FA602AF0137DD3681F /* Resources */ = {
+		CB7B4B5567AA5B2B3C514AFCC15E4769 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,17 +323,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE53839B5CF9586D166CDA60FCD3DA2C /* Sources */ = {
+		A562B78898200519C2C7BFAA6ED5C5A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAEC76266DD8EEFE55EDC5C6106C8438 /* LXSwift+Encryption.swift in Sources */,
-				B4AF908697BC4D5F3EA34643FC8FDA40 /* LXSwiftAES.swift in Sources */,
-				DF20D01101D5374B09EB511486C23A45 /* LXSwiftHASH.swift in Sources */,
-				FC04130DD2F90B6293CD5C31B12D767E /* LXSwiftRSA.swift in Sources */,
-				AAC586B9BD0C780E3548218B9EB6117B /* LXSwiftSecurity-dummy.m in Sources */,
-				4B0BCFF61F164E0F697C2220E6E77C1C /* LXSwiftSecurity.swift in Sources */,
-				8D43FDD805AD1A304873622104390B1E /* LXSwiftSign.swift in Sources */,
+				3F1B4DC275AC9EC6428584A8CFDCEE1C /* LXSwift+Encode.swift in Sources */,
+				DFA45D0498A0EA83CA7CE783D9376F81 /* LXSwift+Encryption.swift in Sources */,
+				77F4BB4395644C8D343544BF97FC8EC8 /* LXSwiftAES.swift in Sources */,
+				85E62FBBA7BE8C1A4BC16BEAE2E85816 /* LXSwiftHASH.swift in Sources */,
+				4E3AA9D2D5B46DC5F5A3D097CF3EDE3D /* LXSwiftRSA.swift in Sources */,
+				86A33CF28C1773D49FAE762C5FBD3B6B /* LXSwiftSecurity-dummy.m in Sources */,
+				E22354341B93B7F856BC2BBC1BCF993C /* LXSwiftSecurity.swift in Sources */,
+				9F6C82D7B857899C9C99C1C240C40498 /* LXSwiftSign.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,42 +387,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		1C98208527E3E12733985C2261AB0743 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30717F457B81A76D16D793A9B6B88A95 /* LXSwiftSecurity.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LXSwiftSecurity/LXSwiftSecurity-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LXSwiftSecurity/LXSwiftSecurity-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/LXSwiftSecurity/LXSwiftSecurity.modulemap";
-				PRODUCT_MODULE_NAME = LXSwiftSecurity;
-				PRODUCT_NAME = LXSwiftSecurity;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		6C61D818ACD3C2C116FED6A9C67E91B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -484,6 +452,41 @@
 			};
 			name = Debug;
 		};
+		6D1BEAA3FD4BC86E378FCED055F846AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8905FB75FB771BFA461DF2209EBA715E /* LXSwiftSecurity.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LXSwiftSecurity/LXSwiftSecurity-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LXSwiftSecurity/LXSwiftSecurity-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LXSwiftSecurity/LXSwiftSecurity.modulemap";
+				PRODUCT_MODULE_NAME = LXSwiftSecurity;
+				PRODUCT_NAME = LXSwiftSecurity;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		7DC5F11AFBEAE473E8D3C24A2D11338D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -544,41 +547,6 @@
 			};
 			name = Release;
 		};
-		A91E1AB5F1404ABAD9FB37BDCE54342A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C334BA73AE153B6499020819E07295FF /* LXSwiftSecurity.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LXSwiftSecurity/LXSwiftSecurity-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LXSwiftSecurity/LXSwiftSecurity-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/LXSwiftSecurity/LXSwiftSecurity.modulemap";
-				PRODUCT_MODULE_NAME = LXSwiftSecurity;
-				PRODUCT_NAME = LXSwiftSecurity;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		B92FF4744D15CD183D40752D683213ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5BA05954482CF81410DAC2A819A6E5DF /* Pods-LXSwiftSecurityModule.release.xcconfig */;
@@ -618,6 +586,42 @@
 			};
 			name = Release;
 		};
+		DC00C22C5EC55BA00BA059244E0E57D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 845D6F625FAA7A9211A188DB0B419ACF /* LXSwiftSecurity.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LXSwiftSecurity/LXSwiftSecurity-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LXSwiftSecurity/LXSwiftSecurity-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LXSwiftSecurity/LXSwiftSecurity.modulemap";
+				PRODUCT_MODULE_NAME = LXSwiftSecurity;
+				PRODUCT_NAME = LXSwiftSecurity;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -639,11 +643,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F6E0BA8E1A4AD9105EC7DC34E85B0E63 /* Build configuration list for PBXNativeTarget "LXSwiftSecurity" */ = {
+		F56D9921F67609265389CE858DBD5CE8 /* Build configuration list for PBXNativeTarget "LXSwiftSecurity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A91E1AB5F1404ABAD9FB37BDCE54342A /* Debug */,
-				1C98208527E3E12733985C2261AB0743 /* Release */,
+				6D1BEAA3FD4BC86E378FCED055F846AB /* Debug */,
+				DC00C22C5EC55BA00BA059244E0E57D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

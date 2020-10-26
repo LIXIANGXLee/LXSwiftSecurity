@@ -46,6 +46,12 @@ class ViewController: UIViewController {
         guard  let iv16 = "0123456789654321".data(using: .utf8) as NSData? else { return  }
         
         LXSwiftAES.AES_CBC_Encrypt(with: srcData, key: key16, iv: iv16) { (data) in
+            
+             let  base64 =  data!.dataToStringOfBase64Encode
+             let baseData = base64?.stringToDataOfBase64Decode!
+             print("======\(base64!)==\(baseData!)==\(data!)")
+
+            
             LXSwiftAES.AES_CBC_Decrypt(with: data!, key: key16, iv: iv16) { (data) in
                 assert(srcData == data!, "aes_cbc加密失败")
             }
@@ -65,17 +71,17 @@ class ViewController: UIViewController {
         print("*****开始验证*Rsa****")
         guard let srcData = "我是一名iOS开发工程师，解决加密问题".data(using: .utf8) as NSData? else { return }
         
-        
-       let  (pubKey, priKey) =  LXSwiftSecurity.generateRSAKeyPair(1024)
-       let d = LXSwiftRSA.RSA_Encrypt(with: srcData, publicKey: pubKey, paddingType: .PKCS1)
-       let d1 = LXSwiftRSA.RSA_Decrypt(with: d!, privateKey: priKey, paddingType: .PKCS1)
-        
-        if d1! == srcData {
-            print("==RSA_Encrypt===\(d1!)===\(srcData)")
-
-        }
-        
-        
+//
+//       let  (pubKey, priKey) =  LXSwiftSecurity.generateRSAKeyPair(1024)
+//       let d = LXSwiftRSA.RSA_Encrypt(with: srcData, publicKey: pubKey, paddingType: .PKCS1)
+//       let d1 = LXSwiftRSA.RSA_Decrypt(with: d!, privateKey: priKey, paddingType: .PKCS1)
+//
+//        if d1! == srcData {
+//            print("==RSA_Encrypt===\(d1!)===\(srcData)")
+//
+//        }
+//
+//
         LXSwiftSecurity.generateRSAKeyPair(1024) { (pubKey, priKey) in
             LXSwiftRSA.RSA_Encrypt(with: srcData, publicKey: pubKey, paddingType: LXSwiftRSA.RSAPaddingType.PKCS1) { (data) in
                 LXSwiftRSA.RSA_Decrypt(with: data!, privateKey: priKey, paddingType: LXSwiftRSA.RSAPaddingType.PKCS1) { (data) in
