@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
     #
     
     spec.name         = "LXSwiftSecurity"
-    spec.version      = "3.1.0"
+    spec.version      = "4.0.0"
     spec.summary      = "swift加密方式md5/SHA1/SHA224/SHA256/SHA384/SHA512/AES/RSA/签名/验证签名"
     
     
@@ -34,10 +34,7 @@ Pod::Spec.new do |spec|
     spec.swift_version = "5.0"
     
     spec.source = { :git => "https://github.com/LIXIANGXLee/LXSwiftSecurity.git", :tag => "#{spec.version}" }
-    
-    #    spec.source_files  = "LXSwiftSecurity/*.swift"
-    
-    
+ 
     spec.subspec 'Core' do |core|
         core.source_files  = 'LXSwiftSecurity/Core/*.swift'
     end

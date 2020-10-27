@@ -67,25 +67,26 @@ public struct LXSwiftRSA {
             return nil
         }
         
-        /// 指针类型转换
-        let dataBytes = data.bytes.assumingMemoryBound(to: UInt8.self)
-        
-        /// 输出数据时需要的可用空间大小。数据缓冲区的大小（字节）
-        var bufferLength =  SecKeyGetBlockSize(key)
-        let bufferPointer = UnsafeMutableRawPointer.allocate(byteCount: bufferLength, alignment: 1)
-        let bufferBytes = bufferPointer.assumingMemoryBound(to: UInt8.self)
+        /// 加密时判断此条件
+        if isEncrypt, data.count > SecKeyGetBlockSize(key) - 11 {
+            return nil
+        }
         
         /// 填充模式
         let rsaPadd: SecPadding = paddingType.secPadd
-       
-        /// 销毁自己创建的内存
-        defer { bufferBytes.deallocate() }
         
+        /// 指针类型转换
+        let dataBytes = data.bytes.assumingMemoryBound(to: UInt8.self)
+
+        /// 输出数据时需要的可用空间大小。数据缓冲区的大小（字节）
+        var bufferLength =  SecKeyGetBlockSize(key)
+        var bufferBytes = [UInt8].init(repeating: 0, count: bufferLength)
+       
         var cryptStatus: OSStatus
         if isEncrypt { /// 开始加密
-            cryptStatus = SecKeyEncrypt(key, rsaPadd, dataBytes, data.length, bufferBytes, &bufferLength)
+            cryptStatus = SecKeyEncrypt(key, rsaPadd, dataBytes, data.length, &bufferBytes, &bufferLength)
         }else{///开始解密
-            cryptStatus = SecKeyDecrypt(key, rsaPadd, dataBytes, data.length, bufferBytes,  &bufferLength)
+            cryptStatus = SecKeyDecrypt(key, rsaPadd, dataBytes, data.length, &bufferBytes,  &bufferLength)
         }
         
         /// 加密成功或者解密成功

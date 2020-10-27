@@ -41,7 +41,7 @@ public struct LXSwiftSign {
     @discardableResult
     public static func sign(with data: NSData, privateKey: SecKey?, paddingType: LXSwiftSign.SECPaddingType, callBack: LXSwiftSecurity.CallBack<NSData>? = nil) -> NSData? {
         /// 如果没有数据 或者没有密钥 则不要往下处理 直接返回即可
-        guard let key = privateKey, data.count > 0  else {
+        guard let key = privateKey, data.count > 0, data.count <= SecKeyGetBlockSize(key) - 11  else {
             callBack?(nil)
             return nil
         }
@@ -52,16 +52,13 @@ public struct LXSwiftSign {
         /// 创建缓冲区
         /// 输出数据时需要的可用空间大小。数据缓冲区的大小（字节）
         var bufferLength =  SecKeyGetBlockSize(key)
-        let bufferPointer = UnsafeMutableRawPointer.allocate(byteCount: bufferLength, alignment: 1)
-        let bufferBytes = bufferPointer.assumingMemoryBound(to: UInt8.self)
-        
+        var bufferBytes = [UInt8].init(repeating: 0, count: bufferLength)
+
         /// 填充模式
         let secPadd = paddingType.secPadd
        
-        let cryptStatus = SecKeyRawSign(key, secPadd, dataBytes, data.length, bufferBytes, &bufferLength)
-        
-        defer { bufferBytes.deallocate() }
-        
+        let cryptStatus = SecKeyRawSign(key, secPadd, dataBytes, data.length, &bufferBytes, &bufferLength)
+                
         /// 签名或者签名验证成功
         if cryptStatus == errSecSuccess {
             let d = NSData(bytes: bufferBytes, length: bufferLength)
@@ -84,7 +81,7 @@ public struct LXSwiftSign {
     @discardableResult
     public static func verifySign(with data: NSData, signData: NSData, publicKey: SecKey?, paddingType: LXSwiftSign.SECPaddingType, callBack: LXSwiftSecurity.CallBack<Bool>? = nil) -> Bool {
         /// 如果没有数据 或者没有密钥 则不要往下处理 直接返回即可
-        guard let key = publicKey, data.count > 0  else {
+        guard let key = publicKey, data.count > 0, data.count <= SecKeyGetBlockSize(key) - 11 else {
             callBack?(false)
             return false
         }

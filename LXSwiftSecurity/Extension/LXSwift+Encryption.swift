@@ -17,7 +17,7 @@ extension NSData {
     /// - Parameters:
     /// - publicKey: 加密用的公钥
     /// - paddingType:  填充模式
-    public func RSA_Encrypt(with publicKey: SecKey?, paddingType: LXSwiftRSA.RSAPaddingType) -> NSData?{
+    public func RSA_Encrypt(with publicKey: SecKey?, paddingType: LXSwiftRSA.RSAPaddingType = .PKCS1) -> NSData?{
         return LXSwiftRSA.RSA_Encrypt(with: self, publicKey: publicKey, paddingType: paddingType)
     }
     
@@ -27,7 +27,7 @@ extension NSData {
     /// - Parameters:
     /// - priKey: 解密用的私钥
     /// - paddingType:  填充模式
-    public func RSA_Decrypt(with privateKey: SecKey?, paddingType: LXSwiftRSA.RSAPaddingType) -> NSData?{
+    public func RSA_Decrypt(with privateKey: SecKey?, paddingType: LXSwiftRSA.RSAPaddingType = .PKCS1) -> NSData?{
         return LXSwiftRSA.RSA_Decrypt(with: self, privateKey: privateKey, paddingType: paddingType)
     }
 }
@@ -107,8 +107,12 @@ extension NSData {
     }
     
     ///加密后的nsdata数据处理成String
-    public var stringFromData: String? {
-        return LXSwiftSecurity.stringFromResult(self)
+    public var dataToString: String? {
+        let result = NSMutableString()
+        for i in 0..<self.length {
+            result.appendFormat("%02x", self.bytes.load(fromByteOffset: i, as: CUnsignedChar.self))
+        }
+        return String(result)
     }
     
 }

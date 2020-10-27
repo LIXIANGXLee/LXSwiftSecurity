@@ -18,6 +18,14 @@ extension NSData {
        return self.base64EncodedString(options: Base64EncodingOptions.init(rawValue: 0))
     }
     
+    /// NSData类型转换操作 Array of UInt8
+    public func arrayOfBytes() -> [UInt8] {
+        let count = self.count / MemoryLayout<UInt8>.size
+        var bytesArray = [UInt8](repeating: 0, count: count)
+        (self as NSData).getBytes(&bytesArray, length:count * MemoryLayout<UInt8>.size)
+        return bytesArray
+    }
+    
 }
 
 
